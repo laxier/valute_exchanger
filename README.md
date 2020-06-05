@@ -1,5 +1,6 @@
 # valute_exchanger
 my project for HSE summer school
+
 Сценарий использования 1 этапа
 1. ввести количество денег в рублях
 3. нажать кнопку перевода
