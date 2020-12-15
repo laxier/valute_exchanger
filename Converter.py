@@ -10,7 +10,6 @@ def second(rub):
     return(rub / float(rate["RUB"]) * float(rate["USD"]))
 response = requests.get("https://api.exchangeratesapi.io/latest")
 rate = response.json()['rates']
-print(response.json())
 print("Hello! This is a Currency Converter")
 print("What wold you like to convert?")
 print("1 - dollar to rubble")
