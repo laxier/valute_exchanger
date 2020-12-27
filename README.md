@@ -1,6 +1,4 @@
 # valute_exchanger
-my project for HSE summer school
+GUI part of my project
 
-1. enter the amount of money in rubles
-2. enter the amount of money in dollars
-3. transfer
+It will be windowed-mode-programm. I decided to supplement it after a long time. Better late than never.
