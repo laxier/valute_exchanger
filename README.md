@@ -9,3 +9,4 @@ UPD:
 
 4. It has the user interface
 5. You can push the button to convert
+6. Run exe file
