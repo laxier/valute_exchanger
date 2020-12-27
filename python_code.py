@@ -1,7 +1,10 @@
+#Scripted by: Laxier
+#Importing libraries
 from PyQt5 import QtCore, QtGui, QtWidgets
 import requests
 
 class Ui_CurrencyConverter(object):
+    #initialization
     def setupUi(self, CurrencyConverter):
         CurrencyConverter.setObjectName("CurrencyConverter")
         CurrencyConverter.setEnabled(True)
@@ -77,7 +80,9 @@ class Ui_CurrencyConverter(object):
         font = QtGui.QFont()
         font.setFamily("Microsoft YaHei")
         self.to_currency.setMaxVisibleItems(10)
+        #updating the CURRENCY COST
         response = requests.get("https://api.exchangeratesapi.io/latest")
+        #creating the gloabal var containing currency ang EUR-COST
         global a
         a = response.json()['rates']
         a.update({'EUR': 1})
@@ -137,13 +142,15 @@ class Ui_CurrencyConverter(object):
         self.output.setText(_translate("CurrencyConverter", "you get:"))
 
     def convertion(self):
-        # converts
+        # converts cost in 1current to 2current
         if(self.input_text.text()):
             to_do = int(self.input_text.text())
             to = self.to_currency.currentText()
             fro = self.from_currency.currentText()
+            #getting cost from global var a created in 86 line
             out = (to_do / float(a[fro]) * float(a[to]))
             print(out)
+            #changing output
             self.output.setText("tou get: {:.2f} {}".format(out, to))
 
 if __name__ == "__main__":
