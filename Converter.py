@@ -1,5 +1,6 @@
 #CurrencyConverter.py
 #Scrypted by: Laxier
+
 import json
 import requests
 def first(dol):
