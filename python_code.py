@@ -3,6 +3,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import requests
 
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 class Ui_CurrencyConverter(object):
     #initialization
     def setupUi(self, CurrencyConverter):
@@ -55,9 +65,9 @@ class Ui_CurrencyConverter(object):
         font.setPointSize(12)
         self.input_text.setFont(font)
         self.input_text.setStyleSheet("color: #082567;\n"
-"border: 2px solid #082567;\n"
-"borger radius: 3px;\n"
-"")
+                                      "border: 2px solid #082567;\n"
+                                      "borger radius: 3px;\n"
+                                      "")
         self.input_text.setAlignment(QtCore.Qt.AlignCenter)
         self.input_text.setObjectName("input_text")
         self.input_text.setMaxLength(10)
@@ -120,9 +130,9 @@ class Ui_CurrencyConverter(object):
         font.setKerning(True)
         self.output.setFont(font)
         self.output.setStyleSheet(" color: grey; \n"
-"border: 2px solid #082567;\n"
-"borger radius: 3px;\n"
-"")
+                                  "border: 2px solid #082567;\n"
+                                  "borger radius: 3px;\n"
+                                  "")
         self.output.setTextFormat(QtCore.Qt.AutoText)
         self.output.setAlignment(QtCore.Qt.AlignCenter)
         self.output.setObjectName("output")
